@@ -2,11 +2,21 @@
 
 :root{
   --bg-color: #202020;
+  --border-color: rgb(51, 50, 50);
   --scroll-color: rgb(97, 96, 96);
-  --grid-bg-color: #181818;
+  --input-focus-color: #1C62B9;
+  --input-border-color: #303030;
+  --input-bg-color: #121212;
+  --input-color: #BBBBBB;
+  --button-bg-color: #323232;
+  --button-color: #999999;
+  --icons-hover-focus-color: rgba(236, 231, 231, 0.2);
+  --icon-youtube-color: #FF0000;
   --sidebar-hover-color: rgb(51, 50, 50);
+  --sidebar-icon-color: rgb(139, 139, 139);
   --grid-description-color: #A0A5AA;
-  --input-search-focus: #1C62B9;
+  --grid-bg-color: #181818;
+  --grid-bg-after-color: rgba(14, 12, 14, 0.6);
 }
 
 *{
@@ -88,7 +98,7 @@ header > div:first-child > a:nth-child(2),
 
 header > div:first-child > a:nth-child(2) > i,
  .content-sidebar > div > a:nth-child(2) > i{
-  color: #FF0000;
+  color: var(--icon-youtube-color);
   font-size: 20px;
 }
 
@@ -110,20 +120,20 @@ header > div:nth-child(2) form > div:first-child{
 
 header > div:nth-child(2) input{
   outline: none;
-  border: 1px solid #303030;
+  border: 1px solid var(--input-border-color);
   width: 100%;
   height: 100%;
-  background-color: #121212;
+  background-color: var(--input-bg-color);
   padding-left: 15px;
-  color: #BBBBBB;
+  color: var(--input-color);
   font-size: 16px;
   font-weight: 400;
 }
  
 header > div:nth-child(2) button{
   padding: 0 20px;
-  background-color: #323232;
-  color: #999999;
+  background-color: var(--button-bg-color);
+  color: var(--button-color);
 }
 
 header > div:nth-child(2) button:hover{
@@ -131,7 +141,7 @@ header > div:nth-child(2) button:hover{
 }
 
 header > div:nth-child(2) input:focus{
-  border: 1px solid var(--input-search-focus);
+  border: 1px solid var(--input-focus-color);
 }
 
 header > div:nth-child(3){
@@ -164,7 +174,7 @@ header > div:nth-child(3) .button-perfil img{
 }
 
 header .buttons > a:hover,.buttons a:focus{
-  background-color: rgba(236, 231, 231, 0.2);
+  background-color: var(--icons-hover-focus-color);
   border-radius: 50%;
 }
 
@@ -200,8 +210,8 @@ header .buttons > a:hover,.buttons a:focus{
   margin-bottom: 12px;
 }
 
-.sidebar .content-sidebar > div {
-  border: 1px solid rgb(51, 50, 50);
+.sidebar .content-sidebar > div:nth-child(2) {
+  border: 1px solid var(--border-color);
 }
 
 .sidebar .content-sidebar > a:hover{
@@ -215,7 +225,7 @@ header .buttons > a:hover,.buttons a:focus{
 
 .sidebar .content-sidebar > a > div > i{
   font-size: 18px;
-  color: rgb(139, 139, 139);
+  color: var(--sidebar-icon-color);
 }
 
 .sidebar .content-sidebar > a > span{
@@ -233,10 +243,8 @@ header .buttons > a:hover,.buttons a:focus{
   top: 0;
   bottom: 0;
   margin-top: 56px;
-  /* right: 0; */
   font-size: 10px;
   font-weight: 400;
-  /* z-index: 2008; */
 }
 
 .sidebar-min > a:hover{
@@ -268,7 +276,7 @@ header .buttons > a:hover,.buttons a:focus{
   column-gap: 20px;
   background-color: var(--grid-bg-color);
   padding: 20px 20px 0 20px;
-  border-top: 1px solid rgb(51, 50, 50);
+  border-top: 1px solid (--border-color);
 }
 
 .grid .grid-item{
@@ -343,7 +351,7 @@ header .buttons > a:hover,.buttons a:focus{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(14, 12, 14, 0.6);
+  background-color: var(--grid-bg-after-color);
 }
 
 
