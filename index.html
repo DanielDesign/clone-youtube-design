@@ -29,9 +29,12 @@
             <i class="fas fa-search"></i>
           </button>
         </form>
-        <a href="#">
-          <i class="fas fa-microphone"></i>
-        </a>
+        <div>
+          <a href="#">
+            <i class="fas fa-microphone"></i>
+          </a>
+          <i class="fas fa-search d-none"></i>
+        </div>
       </div>
       <div class="buttons">
         <a href="#" class="button-video">
@@ -468,9 +471,9 @@
       })
     })
 
-    // Detect media query in 1330px for remove classes
-    let x = window.matchMedia("(max-width: 1330px)");
-    x.addListener((event)=>{
+    // Detect media query in max-width:1330px for remove classes
+    let max_width = window.matchMedia("(max-width: 1330px)");
+    max_width.addListener((event)=>{
       if(event.matches){
         sidebar.classList.remove('visible');
         sidebarMin.classList.remove('ocultar');

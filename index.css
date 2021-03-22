@@ -3,9 +3,10 @@
 :root{
   --bg-color: #202020;
   --scroll-color: rgb(97, 96, 96);
-  --bg-grid-color: #181818;
-  --hover-sidebar-color: rgb(51, 50, 50);
+  --grid-bg-color: #181818;
+  --sidebar-hover-color: rgb(51, 50, 50);
   --grid-description-color: #A0A5AA;
+  --input-search-focus: #1C62B9;
 }
 
 *{
@@ -58,13 +59,12 @@ header{
   right: 0;
   left: 0;
   height: 56px;
-  background-color: black;
   z-index: 2020;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 16px;
-  background-color: #202020;
+  background-color: var(--bg-color);
 }
 
 header > div:first-child, .content-sidebar > div:first-child {
@@ -73,18 +73,21 @@ header > div:first-child, .content-sidebar > div:first-child {
   align-items: center;
 }
 
-header > div:first-child > .handler > i,.content-sidebar > div > .handler > i{
+header > div:first-child > .handler > i,
+.content-sidebar > div > .handler > i{
   margin-right: 16px;
   font-size: 18px;
   padding: 8px 12px 8px 4px;
 }
 
-header > div:first-child > a:nth-child(2),.content-sidebar > div > a:nth-child(2){
+header > div:first-child > a:nth-child(2),
+.content-sidebar > div > a:nth-child(2){
   display: flex;
   align-items: center;
 }
 
-header > div:first-child > a:nth-child(2) > i, .content-sidebar > div > a:nth-child(2) > i{
+header > div:first-child > a:nth-child(2) > i,
+ .content-sidebar > div > a:nth-child(2) > i{
   color: #FF0000;
   font-size: 20px;
 }
@@ -106,7 +109,7 @@ header > div:nth-child(2) form > div:first-child{
 }
 
 header > div:nth-child(2) input{
-   outline: none;
+  outline: none;
   border: 1px solid #303030;
   width: 100%;
   height: 100%;
@@ -128,7 +131,7 @@ header > div:nth-child(2) button:hover{
 }
 
 header > div:nth-child(2) input:focus{
-  border: 1px solid blue;
+  border: 1px solid var(--input-search-focus);
 }
 
 header > div:nth-child(3){
@@ -188,7 +191,8 @@ header .buttons > a:hover,.buttons a:focus{
   display:flex;
 }
 
-.sidebar .content-sidebar > a:nth-child(2),.sidebar .content-sidebar > .line + a{
+.sidebar .content-sidebar > a:nth-child(2),
+.sidebar .content-sidebar > .line + a{
   margin-top: 12px;
 }
 
@@ -201,7 +205,7 @@ header .buttons > a:hover,.buttons a:focus{
 }
 
 .sidebar .content-sidebar > a:hover{
-  background-color: var(--hover-sidebar-color);
+  background-color: var(--sidebar-hover-color);
 }
 
 .sidebar .content-sidebar > a > div{
@@ -236,7 +240,7 @@ header .buttons > a:hover,.buttons a:focus{
 }
 
 .sidebar-min > a:hover{
-  background-color: var(--hover-sidebar-color);
+  background-color: var(--sidebar-hover-color);
 }
 
 .sidebar-min > a {
@@ -262,7 +266,7 @@ header .buttons > a:hover,.buttons a:focus{
   grid-template-columns: repeat(4,1fr);
   grid-template-rows: repeat(4,1fr);
   column-gap: 20px;
-  background-color: var(--bg-grid-color);
+  background-color: var(--grid-bg-color);
   padding: 20px 20px 0 20px;
   border-top: 1px solid rgb(51, 50, 50);
 }
@@ -278,6 +282,10 @@ header .buttons > a:hover,.buttons a:focus{
 .grid .grid-item .grid-media > img{
   width: 100%;
   display: block;
+}
+
+.grid .grid-item .grid-media > img:hover{
+  cursor: pointer;
 }
 
 .grid .grid-item .description{
@@ -308,7 +316,8 @@ header .buttons > a:hover,.buttons a:focus{
   margin-bottom: 7px;
 }
 
-.grid .grid-item .description .metadata .meta-description .link-meta,.link-info{
+.grid .grid-item .description .metadata .meta-description .link-meta,
+.link-info{
   color: var(--grid-description-color);
 }
 
@@ -348,7 +357,7 @@ header .buttons > a:hover,.buttons a:focus{
     z-index: 3000;
   }
 
-  .sidebar .content-sidebar > div {
+  .sidebar .content-sidebar > div:first-child {
     display: flex !important;
     padding: 10px 0 10px 23px;
   }
@@ -370,7 +379,7 @@ header .buttons > a:hover,.buttons a:focus{
     z-index: 3000;
   }
 
-  .sidebar .content-sidebar > div {
+  .sidebar .content-sidebar > div:first-child {
     display: flex !important;
     padding: 10px 0 10px 23px;
   }
@@ -382,15 +391,28 @@ header .buttons > a:hover,.buttons a:focus{
 }
 
 @media only screen and (max-width: 600px){
+  
+  .header div:nth-child(2) form{
+    display: none;
+  }
+  
+  .header div:nth-child(2) > div {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+  }
+  
+  .header div:nth-child(2) > .fa-search.d-none{
+    padding-left: 20px;
+    display: block !important;
+  }
+  
   .sidebar-min,.sidebar{
     display: none ;
   }
 
   .grid{
     margin-left: 0;
-  }
-
-  .grid{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
   }
