@@ -158,7 +158,6 @@ a:hover {
   align-items: center;
 }
 
-
 .header .buttons > a > i{
   font-size: 17px;
 }
@@ -281,7 +280,7 @@ a:hover {
   column-gap: 20px;
   background-color: var(--grid-bg-color);
   padding: 20px 20px 0 20px;
-  border-top: 1px solid (--border-color);
+  border-top: 1px solid var(--border-color);
 }
 
 .grid .grid-item{
@@ -321,7 +320,7 @@ a:hover {
   padding: 4px;
   background-color: black;
   font-size: 12px;
-  border-radius: 1em;
+  border-radius: 0.2em;
 }
 
 .grid .grid-item .description .metadata .meta-title{
@@ -383,20 +382,7 @@ a:hover {
 }
 
 @media only screen and (max-width: 900px){
-  .sidebar-min{
-    display: block;
-  }
-  .sidebar{
-    display: none ;
-    margin-top: 0;
-    z-index: 3000;
-  }
-
-  .sidebar .content-sidebar > div:first-child {
-    display: flex !important;
-    padding: 11px 0 10px 24px;
-  }
-
+  
   .grid{
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);

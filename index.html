@@ -445,7 +445,7 @@
     let sidebarMin = document.querySelector('.sidebar-min');
     let grid = document.querySelector('.grid');
     
-    // Evento para la clase handler
+    // Evento para todos los elementos que tengan la clase handler
     handler.forEach((element)=>{
       element.addEventListener('click',()=>{
         if(window.innerWidth >= '1330')
@@ -475,9 +475,10 @@
       })
     })
 
-    // Para remover las clases toggle cuando este en un min-width de 1330px
-    let max_width = window.matchMedia("(min-width: 1330px)");
-    max_width.addListener((event)=>{
+    // Se dispara este evento cuando el min-width sea 1330px y remueva
+    // lass clases toggle automaticamente
+    let min_width = window.matchMedia("(min-width: 1330px)");
+    min_width.addListener((event)=>{
       if(event.matches){
         sidebar.classList.remove('visible');
         sidebarMin.classList.remove('ocultar');
