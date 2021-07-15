@@ -48,9 +48,9 @@ button{
 
 a,
 a:focus,
-a:hover {
- text-decoration: none;
- color: white;
+a:hover{
+  text-decoration: none;
+  color: white;
 }
 
 .d-none{
@@ -61,7 +61,7 @@ a:hover {
   position: relative;
 }
 
-/* HEADER */
+/*HEADER*/
 
 .header{
   position: fixed;
@@ -77,7 +77,7 @@ a:hover {
   background-color: var(--bg-color);
 }
 
-.header > div:first-child, .content-sidebar > div:first-child {
+.header > div:first-child, .content-sidebar > div:first-child{
   padding: 8px;
   display: flex;
   align-items: center;
@@ -97,7 +97,7 @@ a:hover {
 }
 
 .header > div:first-child > a:nth-child(2) > i,
- .content-sidebar > div > a:nth-child(2) > i{
+.content-sidebar > div > a:nth-child(2) > i{
   color: var(--icon-youtube-color);
   font-size: 20px;
 }
@@ -129,7 +129,7 @@ a:hover {
   font-size: 16px;
   font-weight: 400;
 }
- 
+
 .header > div:nth-child(2) button{
   padding: 0 20px;
   background-color: var(--button-bg-color);
@@ -173,13 +173,13 @@ a:hover {
   object-fit: cover;
 }
 
-.header .buttons > a:hover,.buttons a:focus{
+.header .buttons > a:hover, .buttons a:focus{
   background-color: var(--icons-hover-focus-color);
   border-radius: 50%;
 }
 
-
 /* SIDEBAR */
+
 .sidebar{
   margin-top: 56px;
   position: fixed;
@@ -202,7 +202,7 @@ a:hover {
 
 .sidebar .content-sidebar > a{
   padding: 10px 0 10px 24px;
-  display:flex;
+  display: flex;
 }
 
 .sidebar .content-sidebar > a:nth-child(2),
@@ -214,7 +214,7 @@ a:hover {
   margin-bottom: 12px;
 }
 
-.sidebar .content-sidebar > .line {
+.sidebar .content-sidebar > .line{
   border: 1px solid var(--border-color);
 }
 
@@ -251,8 +251,7 @@ a:hover {
   font-weight: 400;
 }
 
-.sidebar-min > a {
-  
+.sidebar-min > a{
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -273,10 +272,10 @@ a:hover {
 
 .grid{
   margin-top: 56px;
-  margin-left: 240px ;
+  margin-left: 240px;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  grid-template-rows: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   column-gap: 20px;
   background-color: var(--grid-bg-color);
   padding: 20px 20px 0 20px;
@@ -286,12 +285,17 @@ a:hover {
 .grid .grid-item{
   margin-bottom: 40px;
 }
-
-.grid .grid-media{
+/* 
+.grid .grid-item .grid-media {
   position: relative;
+} */
+
+.grid .grid-item .grid-media a{
+  position: relative;
+  display: block;
 }
 
-.grid .grid-item .grid-media > img{
+.grid .grid-item .grid-media a > img{
   width: 100%;
   display: block;
 }
@@ -313,7 +317,7 @@ a:hover {
   margin-right: 10px;
 }
 
-.grid .grid-item .grid-media > .duration{
+.grid .grid-item .grid-media a > .duration{
   position: absolute;
   bottom: 3%;
   right: 4%;
@@ -333,8 +337,8 @@ a:hover {
   color: var(--grid-description-color);
 }
 
+/* AGREGANDO CLASES TOGGLE */
 
-/* classes toggle */
 .visible{
   display: block !important;
 }
@@ -347,7 +351,6 @@ a:hover {
   margin-left: 72px !important;
 }
 
-/* change color black */
 .grid-op::after{
   content: '';
   position: absolute;
@@ -358,18 +361,21 @@ a:hover {
   background-color: var(--grid-bg-after-color);
 }
 
+/* MEDIA QUERIES */
 
 @media only screen and (max-width: 1330px){
+
   .sidebar-min{
-    display: block ;
+    display: block;
   }
+
   .sidebar{
-    display: none ;
+    display: none;
     margin-top: 0;
     z-index: 3000;
   }
 
-  .sidebar .content-sidebar > div:first-child {
+  .sidebar .content-sidebar > div:first-child{
     display: flex !important;
     padding: 11px 0 10px 24px;
   }
@@ -382,7 +388,6 @@ a:hover {
 }
 
 @media only screen and (max-width: 900px){
-  
   .grid{
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -394,22 +399,22 @@ a:hover {
   .header div:nth-child(2) form{
     display: none;
   }
-  
-  .header div:nth-child(2) > div {
+
+  .header div:nth-child(2) > div{
     display: flex;
     margin-left: auto;
     align-items: center;
   }
-  
+
   .header div:nth-child(2) > .fa-search.d-none{
     padding-left: 20px;
     display: block !important;
   }
-  
-  .sidebar-min,.sidebar{
-    display: none ;
-  }
 
+  .sidebar-min, .sidebar{
+    display: none;
+  }
+  
   .grid{
     margin-left: 0;
     grid-template-columns: 1fr;
